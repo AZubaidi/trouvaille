@@ -1,6 +1,6 @@
 .card {
-	height: 8rem;
-	width: 6rem;
+	height: 16rem;
+	width: 12rem;
 	display: flex;
 	align-items: flex-end;
 	justify-content: center;
@@ -14,9 +14,9 @@
 	&:hover {
 		filter: none;
 	}
-	&--big {
-		height: 16rem;
-		width: 12rem;
+	&--dstn {
+		height: 22rem;
+		width: 16rem;
 	}
 	&__name {
 		filter: none;

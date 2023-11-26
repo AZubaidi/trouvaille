@@ -1,0 +1,14 @@
+.block {
+	display: flex;
+	align-items: center;
+	margin-bottom: 1rem;
+	&__destination {
+		display: flex;
+		justify-content: center;
+		margin-right: 2rem;
+	}
+	&__points {
+		display: flex;
+		justify-content: space-evenly;
+	}
+}

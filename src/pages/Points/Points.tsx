@@ -22,15 +22,30 @@ export default function Points () {
 	console.log(points);
 	return (
 		destinations.map((destination) => {
-			console.log(destination);
 			return (
-			<div className='destination'>
+			<div className='block'>
+			<div className='block__destination'>
 				<Card
 					destinationId = {destination.id}
 					name = {destination.name}
 					country = {destination.country}
 					photo = {destination.photo}
+					destination = {true}
 				/>
+			</div>
+			<div className='block__points'>
+				{points
+					.filter(point => point.destination_id === destination.id)
+					.map((point) => {
+					return (
+					<Card 
+						destinationId={destination.id}
+						name = {point.name} 
+						photo = {point.photo}
+					/>
+					)
+				})}
+			</div>
 			</div>
 			)
 		})
