@@ -1,0 +1,29 @@
+.header {
+	display: flex;
+	justify-content: space-between;
+	padding: 0 3rem;
+	&__left {
+		text-decoration: none;
+		list-style: none;
+	}
+	&__right {
+		display: flex;
+		justify-content: space-around;
+		align-items: center;
+		text-decoration: none;
+		list-style: none;
+	}
+	&__item {
+		text-decoration: none;
+		margin-left: 1rem;
+	}
+}
+.login-btn {
+	padding: 0.6rem 1.5rem;
+	font-size: 1rem;
+}
+
+a, Link {
+	text-decoration: none;
+	color: black;
+}
