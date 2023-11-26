@@ -33,6 +33,8 @@ export default function Login({setIsLoggedIn, setJwtToken}) {
 		console.log(sendLogin);
 		if (sendLogin && sendLogin.data.token) {
 			console.log('logged in successfully');
+			setIsLoggedIn(true);
+			setJwtToken(sendLogin.data.token);
 			handleClose();
 		}
 	}
