@@ -5,9 +5,9 @@
 _What is your app? Brief description in a couple of sentences._
 
 Trouvaille is how you find your next travel destination.\
-Narrow down destination points that you didn't know you wanted through quick human-readable questions (e.g. urban vs. rustic).\
+Narrow down destination points that you didn't know you wanted through quick photo 1v1s.\
 Every destination point will have images to help you choose based on how you feel.\
-You can log-in to save favourite destination points that are interesting to you.\
+You can log-in to save pin destination points that are interesting to you.\
 Hopefully this will help you realize what type of destination points you are attracted to, through the pattern of saved points.
 
 ### Problem
@@ -31,7 +31,7 @@ It will do one thing and do it well.
 _List the functionality that your app will include. These can be written as user stories or descriptions with related details. Do not describe _how_ these features are implemented, only _what_ needs to be implemented._
 
 A list of destinations, with multiple starting points for each destination.\
-A sort of filtering system, based on human-readable questions, to narrow down possible destinations and/or points in a destination.\
+A sort of filtering system, based on extremely simple 2 choices, to narrow down points in a destination.\
 A profile for each user, with their saved destination points available to them.
 
 ## Implementation
@@ -41,7 +41,7 @@ A profile for each user, with their saved destination points available to them.
 _List technologies that will be used in your app, including any libraries to save time or provide more functionality. Be sure to research any potential limitations._
 
 Front-end: React\
-Back-end: express, knex, mysql\
+Back-end: express, knex, postgreSQL\
 
 ### APIs
 
@@ -64,12 +64,17 @@ _Describe your data and the relationships between them. You can show this visual
 ### Endpoints
 
 _List endpoints that your server will implement, including HTTP methods, parameters, and example responses._
-
+/destinations
+    GET /
+        returns an array of objects of all destinations\
+    GET /:id/points\
+        returns an array of objects of all the points of a speicific destination\
 ### Auth
 
 _Does your project include any login or user profile functionality? If so, describe how authentication/authorization will be implemented._
 
-Yes, possibly auth through something ubiquitous like google.
+Yes, there is a registration and login system using the backend api.
+
 
 ## Roadmap
 
@@ -81,4 +86,4 @@ _Your project will be marked based on what you committed to in the above documen
 
 Global star-based reviews and comments on destination points, with image upload as secondary nice-to-have.\
 User-uploaded points, with manual review to only allow high quality submissions.\
-Integrations with flight/hotel apis for actions after picking a destination.\
+Integrations with flight/hotel apis for actions after picking a destination.
