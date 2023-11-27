@@ -1,3 +1,4 @@
+
 # Trouvaille
 
 ## Overview
@@ -31,7 +32,7 @@ It will do one thing and do it well.
 _List the functionality that your app will include. These can be written as user stories or descriptions with related details. Do not describe _how_ these features are implemented, only _what_ needs to be implemented._
 
 A list of destinations, with multiple starting points for each destination.\
-A sort of filtering system, based on extremely simple 2 choices, to narrow down points in a destination.\
+A sort of filtering system, based on very simple two choices, to narrow down points in a destination.\
 A profile for each user, with their saved destination points available to them.
 
 ## Implementation
@@ -40,18 +41,20 @@ A profile for each user, with their saved destination points available to them.
 
 _List technologies that will be used in your app, including any libraries to save time or provide more functionality. Be sure to research any potential limitations._
 
-Front-end: React\
-Back-end: express, knex, postgreSQL\
+Front-end: React (TypeScript), MaterialUI for modals and fonts\
+Back-end: Express.js, Knex.js, PostgreSQL
 
-### APIs
-
-_List any external sources of data that will be used in your app._
-
-API to fetch data
 
 ### Sitemap
 
 _List the pages of your app with brief descriptions. You can show this visually, or write it out._
+***Homepage***\
+&emsp;**Hero**\
+&emsp;**Selections** (this is a choice of two photos that refine what you're looking for)\
+***Points***\
+&emsp;Shows you all available points and lets you pin them to your favorites.\
+***Pins***\
+&emsp;Shows you all your pins (if logged in).
 
 ### Mockups
 
@@ -59,21 +62,68 @@ _Provide visuals of your app's screens. You can use tools like Figma or pictures
 
 ### Data
 
-_Describe your data and the relationships between them. You can show this visually using diagrams, or write it out._
+_Describe your data and the relationships between them. You can show this visually using diagrams, or write it out.
+
+There are 4 tables in the back-end database.\
+***destinations***\
+&emsp;**id** *PK  (integer auto-increment)\
+&emsp;**name** (string not null)\
+&emsp;**country** (string)\
+&emsp;**photo** (string not null)\
+&emsp;**category** (string not null) *(this is a self-made weighting system, 3 integers in a string)\
+***points***\
+&emsp;**id** *PK  (integer auto-increment)\
+&emsp;**destination_id** FK  (integer references destinations.id)\
+&emsp;**name** (string not null)\
+&emsp;**photo** (string not null)\
+&emsp;**category** (string not null)\
+***users***\
+&emsp;**id** *PK  (integer auto-increment)\
+&emsp;**username** (string not null)\
+&emsp;**password** (string not null) *(salted and hashed)\
+***favorites***\
+&emsp;**user_id** *PK  (integer) AND FK (integer references users.id)\
+&emsp;**point_id** *PK  (integer) AND FK (integer references points.id)\
 
 ### Endpoints
-
 _List endpoints that your server will implement, including HTTP methods, parameters, and example responses._
-/destinations
-    GET /
-        returns an array of objects of all destinations\
-    GET /:id/points\
-        returns an array of objects of all the points of a speicific destination\
+
+**/destinations**\
+&emsp;&emsp;GET /\
+&emsp;&emsp;&emsp;&emsp;returns an array of objects of all destinations\
+&emsp;&emsp;GET /:id/points\
+&emsp;&emsp;&emsp;&emsp;returns an array of objects of all the points of a speicific destination\
+**/points**\
+&emsp;&emsp;GET /\
+&emsp;&emsp;&emsp;&emsp;returns an array of objects of all points\
+&emsp;&emsp;GET /:id/\
+&emsp;&emsp;&emsp;&emsp;returns an object of a specific point\
+**/favorites**\
+&emsp;*Requires a bearer token for all methods*\
+&emsp;&emsp;GET /\
+&emsp;&emsp;&emsp;&emsp;returns an array of all favorites (pins)\
+&emsp;&emsp;POST /\
+&emsp;&emsp;&emsp;&emsp;*requires a body (point_id)*\
+&emsp;&emsp;&emsp;&emsp;puts a favorite in the backend for the user (pin)\
+&emsp;&emsp;DELETE /:id\
+&emsp;&emsp;&emsp;&emsp;deletes a specific favorite (pin)\
+**/register**\
+&emsp;*Requires a body (username, password)*\
+&emsp;&emsp;POST /\
+&emsp;&emsp;&emsp;&emsp;registers a user\
+**/login**\
+&emsp;*Requires a body (username, password)*\
+&emsp;&emsp;POST /\
+&emsp;&emsp;&emsp;&emsp;logs in a user and returns a jwt token
+
+
 ### Auth
 
 _Does your project include any login or user profile functionality? If so, describe how authentication/authorization will be implemented._
 
-Yes, there is a registration and login system using the backend api.
+Yes, there is a registration and login system using the backend api.\
+The front-end updates state based on if the user is logged in, some functionality requires log in.\
+Many backend requests require a bearer token for authorization.
 
 
 ## Roadmap
