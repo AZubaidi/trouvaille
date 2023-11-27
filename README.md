@@ -1,6 +1,22 @@
 
 # Trouvaille
 
+## Installation
+The back-end for the server can be found here: https://github.com/AZubaidi/bstn-capstone-server 
+
+**Requirements:**
+- `node.js`, `postgreSQL`
+
+**Installation steps:**
+
+- Clone this repo
+- Clone the back-end repo
+- In the folder for this repo, run `npm i && npm run dev`
+- Create a `.env` file in the back-end folder and populate it, using `.env.template` as an example
+- In the folder for the back-end, run `npx knex migrate:latest` and `npx knex seed:run` to create and populate your database
+- In the folder for the back-end, run `npm i && node index.js`
+- The website should now be running!
+
 ## Overview
 
 _What is your app? Brief description in a couple of sentences._
@@ -41,13 +57,15 @@ A profile for each user, with their saved destination points available to them.
 
 _List technologies that will be used in your app, including any libraries to save time or provide more functionality. Be sure to research any potential limitations._
 
-Front-end: React (TypeScript), MaterialUI for modals and fonts\
-Back-end: Express.js, Knex.js, PostgreSQL
+**Front-end:** `React (TypeScript)`, `MaterialUI` for modals and fonts\
+**Back-end:** `Express.js`, `Knex.js`, `PostgreSQL`
 
 
 ### Sitemap
 
 _List the pages of your app with brief descriptions. You can show this visually, or write it out._
+
+
 ***Homepage***\
 &emsp;**Hero**\
 &emsp;**Selections** (this is a choice of two photos that refine what you're looking for)\
@@ -62,9 +80,11 @@ _Provide visuals of your app's screens. You can use tools like Figma or pictures
 
 ### Data
 
-_Describe your data and the relationships between them. You can show this visually using diagrams, or write it out.
+_Describe your data and the relationships between them. You can show this visually using diagrams, or write it out._
 
-There are 4 tables in the back-end database.\
+There are 4 tables in the back-end database:
+
+
 ***destinations***\
 &emsp;**id** *PK  (integer auto-increment)\
 &emsp;**name** (string not null)\
