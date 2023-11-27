@@ -18,9 +18,18 @@ const modalStyle = {
   p: 4,
 };
 
-export default function Login({setIsLoggedIn, setJwtToken}) {
+export default function Login({isLoggedIn, setIsLoggedIn, setJwtToken}) {
   const [open, setOpen] = useState(false);
-  const handleOpen = () => setOpen(true);
+  const handleOpen = () => {
+		if (isLoggedIn) {
+			console.log(isLoggedIn);
+			setIsLoggedIn(false);
+			console.log(isLoggedIn);
+			setJwtToken(null);
+			return;
+		}
+		setOpen(true);
+	}
   const handleClose = () => setOpen(false);
   const handleSubmit = async (e: any) => {
 		e.preventDefault();
@@ -41,7 +50,7 @@ export default function Login({setIsLoggedIn, setJwtToken}) {
 	}
   return (
     <div>
-      <button onClick={handleOpen} className='login-btn'>Login</button>
+      <button onClick={handleOpen} className='login-btn'>{isLoggedIn? 'Logout' : 'Login'}</button>
       <Modal
         open={open}
         onClose={handleClose}

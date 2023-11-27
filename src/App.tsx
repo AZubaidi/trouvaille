@@ -90,11 +90,12 @@ function App() {
       console.log(favorites);
     }
     getFavorites();
-  }, [isLoggedIn])
+  }, [])
 
   return (
     <>
     <Header
+        isLoggedIn={isLoggedIn}
         setIsLoggedIn={setIsLoggedIn}
         setJwtToken={setJwtToken}
     />

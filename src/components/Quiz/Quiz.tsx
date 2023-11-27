@@ -61,7 +61,7 @@ export default function Quiz ({addFavorite, deleteFavorite, checkFavorites}) {
 			||
 		<div className='quiz'>
 			<Typography variant='h4'>Pick the place that you like more.</Typography>
-			<Typography variant='subtitle1'>Only {4-numOfClicks} before you're done.</Typography>
+			<Typography variant='subtitle1'>Only {4-numOfClicks} more before your trouvaille.</Typography>
 		<div className='quiz__cards'>
 		{
 		selectPoints.map((point) => {

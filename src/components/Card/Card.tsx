@@ -21,7 +21,7 @@ export default function Card({destinationId, pointId, name, country, photo, dest
 			}
 			{overlay &&
 				<>
-			<Typography className={'card__name'} sx={{fontWeight: 'bold'}}>
+			<Typography className={'card__name'} sx={{fontWeight: 'bold', WebkitTextStroke: '0.5px black'}}>
 				{name}
 			</Typography>
 			<Typography className='card__country'>

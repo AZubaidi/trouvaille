@@ -35,8 +35,12 @@ export default function Pins({isLoggedIn, checkFavorites, addFavorite, deleteFav
 	}, [favorites])
 	return (
 		!isLoggedIn &&
-			<Typography>Please login to view your pins.</Typography>	
+			<Typography variant='h4' sx={{ml:'2rem', mb: '1rem', mt: '2rem'}}>Please login to view your pins.</Typography>	
 		||
+		<div className='pins'>
+		<Typography variant='h4' sx={{ml:'2rem', mb: '1rem', fontWeight: 'bold'}}>Your pins</Typography>
+		<Typography variant='h6' sx={{ml:'2rem', mb: '1rem'}}>Click on a pin to remove it from your pins.</Typography>
+		{
 		destinations.map((destination) => {
 			return (
 			<div className='block'>
@@ -70,5 +74,7 @@ export default function Pins({isLoggedIn, checkFavorites, addFavorite, deleteFav
 			</div>
 			)
 		})
+		}
+		</div>
 	)
 }

@@ -8,7 +8,7 @@ export default function Hero () {
 			<div className='hero__right'>
 			<Typography variant='h1' sx={{ fontWeight: 400, lineHeight: 0.8 }}>trouvaille</Typography>
 			<Typography variant='subtitle1' sx={{ml: 1 }}>(n.) a lucky find.</Typography>
-			<Typography variant='h2'>Find a place you didn't know you wanted.</Typography>
+			<Typography variant='h2'>Find a place that you didn't know you wanted.</Typography>
 			</div>
 			<div className='hero__left'>
 			<div className='hero-card' style={{backgroundImage: `url(${photo})`}}>

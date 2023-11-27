@@ -22,7 +22,7 @@ export default function Points({addFavorite, deleteFavorite, checkFavorites}) {
 	}, [])
 	return (
 		<div className='points'>
-		<Typography variant='h4' sx={{ml:'2rem', mb: '1rem'}}>View all available points.</Typography>
+		<Typography variant='h4' sx={{ml:'2rem', mb: '1rem', fontWeight: 'bold'}}>All travel points</Typography>
 		<Typography variant='h6' sx={{ml:'2rem', mb: '1rem'}}>Click on a pin to add a point to your pins.</Typography>
 		{destinations.map((destination) => {
 			return (
