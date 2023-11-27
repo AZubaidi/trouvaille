@@ -35,6 +35,7 @@ export default function Login({setIsLoggedIn, setJwtToken}) {
 			console.log('logged in successfully');
 			setIsLoggedIn(true);
 			setJwtToken(sendLogin.data.token);
+			localStorage.setItem("token", sendLogin.data.token)
 			handleClose();
 		}
 	}

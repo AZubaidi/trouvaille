@@ -15,6 +15,9 @@ export default function Header({setIsLoggedIn, setJwtToken}) {
 					<Link to='/points'>Points</Link>
 				</li>
 				<li className='header__item'>
+					<Link to='/pins'>Pins</Link>
+				</li>
+				<li className='header__item'>
 					<Login 
 						setIsLoggedIn={setIsLoggedIn}
 						setJwtToken={setJwtToken}

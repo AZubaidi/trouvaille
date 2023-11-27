@@ -10,16 +10,26 @@
 	box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, .5);
 	background-position: center;
 	background-size: cover;
-	filter: blur(1.5px);
-	&:hover {
-		filter: none;
-	}
+	position: relative;
+	margin-right: 1rem;
 	&--dstn {
 		height: 22rem;
 		width: 16rem;
 	}
+	&__pin {
+		position: absolute;
+		right: 0;
+		top: 1rem;
+		stroke: black;
+		stroke-width: 0.5;
+	}
 	&__name {
 		filter: none;
 		font-weight: bold;
+		padding-right: 0.5rem;
+		text-decoration: stroke;
+	}
+	&__country {
+		padding-right: 0.5rem;
 	}
 }
