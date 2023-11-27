@@ -1,25 +1,35 @@
-.card {
+.hero {
+	display: flex;
+	flex-flow: row nowrap;
+	justify-content: space-evenly;
+	align-items: center;
+	background-color: #EFEFEF;
+	padding: 2rem 0;
+	&__right {
+		width: 40%;
+	}
+}
+.hero-card {
+	style: none;
+	box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, .2);
 	height: 16rem;
 	width: 12rem;
+}
+
+.hero-card {
+	height: 23rem;
+	width: 38rem;
 	display: flex;
 	align-items: flex-end;
-	justify-content: center;
+	justify-content: flex-end;
 	flex-direction: column;
 	color: white;
 	font-size: 1.5rem;
-	box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, .5);
+	box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, .3);
 	background-position: center;
 	background-size: cover;
 	position: relative;
 	margin-right: 1rem;
-	&--dstn {
-		height: 22rem;
-		width: 16rem;
-	}
-	&--special {
-		height: 22rem;
-		width: 16rem;
-	}
 	&__pin {
 		position: absolute;
 		right: 0;
@@ -32,11 +42,9 @@
 		font-weight: bold;
 		padding-right: 0.5rem;
 		text-decoration: stroke;
+		font-size: 3rem;
 	}
 	&__country {
 		padding-right: 0.5rem;
-	}
-	&:hover {
-		filter: contrast(120%);
 	}
 }

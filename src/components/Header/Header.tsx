@@ -7,7 +7,7 @@ export default function Header({setIsLoggedIn, setJwtToken}) {
 		<nav className="header">
 			<ul className='header__left'>
 				<li>
-					<Link to='/'>Trouvaille</Link>
+					<Link to='/'>trouvaille</Link>
 				</li>
 			</ul>
 			<ul className='header__right'>

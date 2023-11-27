@@ -4,39 +4,35 @@ import Card from '../../components/Card/Card';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 
-export default function Pins({isLoggedIn, favorites, addFavorite, deleteFavorite, checkFavorites}) {
+export default function Pins({isLoggedIn, checkFavorites, addFavorite, deleteFavorite, favorites}) {
 	const [destinations, setDestinations] = useState<any[]>([]);
 	const [points, setPoints] = useState<any[]>([]);
 	useEffect(() => {
-		const getDestinations = async() => {
-			const destinations = await axios.get('http://localhost:8080/api/destinations');
-			const data = destinations.data;
-		}
+		console.log('hello');
+
 		const getPoints = async() => {
 			const points = await axios.get('http://localhost:8080/api/points');
 			const data = points.data;
-			console.log(data);
-			const destArray = [];
+			const destinations = await axios.get('http://localhost:8080/api/destinations');
+			const destData = destinations.data;
 			const ptsArray = [];
+			const destArray = [];
 			for (let i = 0; i < data.length; i++) {
 				const pointId = data[i].id;
 				const destId = data[i].destination_id;
-				console.log(pointId);
-				console.log(destId);
-				console.log(favorites);
-				if (favorites.includes(pointId)) {
+				if (checkFavorites(pointId)) {
 					ptsArray.push(data[i]);
-					if (!destArray.includes(destId)) {
-						destArray.push(data[i]);
+					const currentDestination = destData.find(dest => dest.id === destId);
+					if (!destArray.includes(currentDestination)) {
+						destArray.push(currentDestination);
 					}
 				}
 			}
 			setPoints(ptsArray);
 			setDestinations(destArray);
 		}
-		getDestinations();
 		getPoints();
-	}, [])
+	}, [favorites])
 	return (
 		!isLoggedIn &&
 			<Typography>Please login to view your pins.</Typography>	

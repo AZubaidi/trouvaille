@@ -2,9 +2,14 @@
 	display: flex;
 	justify-content: space-between;
 	padding: 0 3rem;
+	box-shadow: 1px 1px 5px 0px rgba(0, 0, 0, 0.5);
+    position: relative;
+    z-index: 10;
 	&__left {
 		text-decoration: none;
+		display: flex;
 		list-style: none;
+		align-items: center;
 	}
 	&__right {
 		display: flex;

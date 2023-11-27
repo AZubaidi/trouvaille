@@ -1,8 +1,15 @@
-export default function Homepage() {
+import Hero from "../../components/Hero/Hero";
+import Quiz from "../../components/Quiz/Quiz";
+
+export default function Homepage({addFavorite, deleteFavorite, checkFavorites}) {
 	return (
 		<>
-			<h1>Welcome to Trouvaille</h1>
-			<h2>The easiest way to find a spot to travel.</h2>
+			<Hero />
+			<Quiz 
+				addFavorite={addFavorite}
+				deleteFavorite={deleteFavorite}
+				checkFavorites={checkFavorites}
+			/>
 		</>
 	)
 };

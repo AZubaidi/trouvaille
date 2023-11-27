@@ -1,0 +1,19 @@
+.quiz {
+	margin-top: 1rem;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	&__heading{
+		padding-bottom: 1rem;
+		padding-right: 1rem;
+	}
+	&__cards {
+		padding-top: 1rem;
+		display: flex;
+		flex-direction: row;
+		margin: 0 5rem;
+		justify-content: space-evenly;
+		width: 30%;
+	}
+}

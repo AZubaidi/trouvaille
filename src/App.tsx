@@ -90,7 +90,7 @@ function App() {
       console.log(favorites);
     }
     getFavorites();
-  }, [])
+  }, [isLoggedIn])
 
   return (
     <>
@@ -101,7 +101,7 @@ function App() {
       <Routes>
         <Route
           path = '/'
-          element = { Homepage() }
+          element = { Homepage({addFavorite, deleteFavorite, checkFavorites}) }
         />
         <Route
           path = '/points'
@@ -112,7 +112,7 @@ function App() {
         <Route
           path = '/pins'
           element = { 
-            Pins({isLoggedIn, favorites, addFavorite, deleteFavorite, checkFavorites})
+            Pins({isLoggedIn, checkFavorites, addFavorite, deleteFavorite, favorites })
           }
         />
       </Routes>

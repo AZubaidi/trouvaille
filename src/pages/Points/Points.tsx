@@ -2,11 +2,13 @@ import { useEffect, useState } from 'react';
 import './Points.scss';
 import axios from 'axios';
 import Card from '../../components/Card/Card';
+import { Typography } from '@mui/material';
 
 export default function Points({addFavorite, deleteFavorite, checkFavorites}) {
 	const [destinations, setDestinations] = useState([]);
 	const [points, setPoints] = useState([]);
 	useEffect(() => {
+		console.log('hello');
 		const getDestinations = async() => {
 			const destinations = await axios.get('http://localhost:8080/api/destinations');
 			setDestinations(destinations.data);
@@ -19,7 +21,10 @@ export default function Points({addFavorite, deleteFavorite, checkFavorites}) {
 		getPoints();
 	}, [])
 	return (
-		destinations.map((destination) => {
+		<div className='points'>
+		<Typography variant='h4' sx={{ml:'2rem', mb: '1rem'}}>View all available points.</Typography>
+		<Typography variant='h6' sx={{ml:'2rem', mb: '1rem'}}>Click on a pin to add a point to your pins.</Typography>
+		{destinations.map((destination) => {
 			return (
 			<div className='block'>
 			<div className='block__destination'>
@@ -51,6 +56,7 @@ export default function Points({addFavorite, deleteFavorite, checkFavorites}) {
 			</div>
 			</div>
 			)
-		})
+		})}
+		</div>
 	)
 }
