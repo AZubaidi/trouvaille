@@ -31,16 +31,24 @@ export default function Quiz ({addFavorite, deleteFavorite, checkFavorites}) {
 	const handleQuizClick = (point) => {
 		console.log('quiz click');
 		console.log(point);
-        setNumOfClicks(numOfClicks + 1);
+		setNumOfClicks(numOfClicks + 1);
 		const pointsArray = selectPoints;
-        const clickedPoint = pointsArray.find((pt) => pt.id === point.id);
-        setCurrentPoint(clickedPoint);
+		const clickedPoint = pointsArray.find((pt) => pt.id === point.id);
+		setCurrentPoint(clickedPoint);
 
-        const clickedPointIndex = pointsArray.findIndex((pt) => pt.id === point.id);
-		const randomElement = points[Math.floor(Math.random() * points.length)];
+		const clickedPointIndex = pointsArray.findIndex((pt) => pt.id === point.id);
+		console.log('clickedpoint', clickedPoint);
+		console.log('currpointid', currentPoint);
+		let randomElement = points[Math.floor(Math.random() * points.length)];
+		console.log('randomelementid', randomElement);
+		while (randomElement.id === clickedPoint.id) {
+			randomElement = points[Math.floor(Math.random() * points.length)];
+			console.log('randomelementid', randomElement.id);
+		}
+
 		const newPoints = [randomElement];
-        newPoints.splice(clickedPointIndex, 0, clickedPoint);
-        setSelectPoints(newPoints);
+		newPoints.splice(clickedPointIndex, 0, clickedPoint);
+		setSelectPoints(newPoints);
 	}
 	return (
 		numOfClicks === 4 && 

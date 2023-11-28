@@ -82,6 +82,7 @@ function App() {
       };
       const res = await axios.get('http://localhost:8080/api/favorites', options);
       const data = res.data;
+      console.log('getfavs', res.data);
       const favArray = [];
       for (let i = 0; i < data.length; i++) {
         favArray.push(data[i].point_id);
@@ -90,7 +91,7 @@ function App() {
       console.log(favorites);
     }
     getFavorites();
-  }, [])
+  }, [isLoggedIn])
 
   return (
     <>

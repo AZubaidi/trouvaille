@@ -21,15 +21,16 @@ const modalStyle = {
 export default function Login({isLoggedIn, setIsLoggedIn, setJwtToken}) {
   const [open, setOpen] = useState(false);
   const handleOpen = () => {
-		if (isLoggedIn) {
-			console.log(isLoggedIn);
-			setIsLoggedIn(false);
-			console.log(isLoggedIn);
-			setJwtToken(null);
-			return;
-		}
-		setOpen(true);
+	if (isLoggedIn) {
+		console.log(isLoggedIn);
+		localStorage.removeItem('token');
+		setJwtToken(null);
+		setIsLoggedIn(false);
+		console.log(isLoggedIn);
+		return;
 	}
+	setOpen(true);
+  }
   const handleClose = () => setOpen(false);
   const handleSubmit = async (e: any) => {
 		e.preventDefault();
