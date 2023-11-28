@@ -10,6 +10,7 @@
 	box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, .5);
 	background-position: center;
 	background-size: cover;
+	border-radius: 10px;
 	position: relative;
 	margin-right: 1rem;
 	&--dstn {
@@ -31,12 +32,12 @@
 		filter: none;
 		font-weight: bold;
 		padding-right: 0.5rem;
-		text-decoration: stroke;
 	}
 	&__country {
 		padding-right: 0.5rem;
 	}
 	&:hover {
 		filter: contrast(120%);
+		cursor: pointer;
 	}
 }

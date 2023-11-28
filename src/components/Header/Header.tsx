@@ -17,6 +17,9 @@ export default function Header({isLoggedIn, setIsLoggedIn, setJwtToken}) {
 				<li className='header__li'>
 					<Link to='/pins' className='header__li__item'>Pins</Link>
 				</li>
+				<li className='header__li'>
+					<Link to='/contact' className='header__li__item header__li__item--contact'>Contact</Link>
+				</li>
 				<li className='header__item'>
 					<Login 
 						isLoggedIn={isLoggedIn}

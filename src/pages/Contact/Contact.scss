@@ -1,0 +1,15 @@
+.contact {
+	background-color: #EFEFEF;
+	height: 80vh;
+	padding-left: 5rem;
+	padding-top: 5rem;
+	&__github {
+		display: flex;
+	}
+	&__linkedin {
+		display: flex;
+	}
+	&__email {
+		display: flex;
+	}
+}

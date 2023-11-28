@@ -30,6 +30,7 @@
 	background-size: cover;
 	position: relative;
 	margin-right: 1rem;
+	border-radius: 10px;
 	&__pin {
 		position: absolute;
 		right: 0;
@@ -46,5 +47,8 @@
 	}
 	&__country {
 		padding-right: 0.5rem;
+	}
+	&:hover {
+		filter: contrast(120%);
 	}
 }

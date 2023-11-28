@@ -12,7 +12,7 @@ export default function Hero () {
 			</div>
 			<div className='hero__left'>
 			<div className='hero-card' style={{backgroundImage: `url(${photo})`}}>
-				<Typography className={'hero-card__name'} sx={{fontSize:'1.5rem', lineHeight:0.8}}>
+				<Typography className={'hero-card__name'} sx={{fontSize:'1.5rem', lineHeight:0.8, fontWeight: '600'}}>
 					Rome
 				</Typography>
 				<Typography className='hero-card__country'>

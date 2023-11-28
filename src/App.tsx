@@ -10,6 +10,7 @@ import '@fontsource/roboto/400.css';
 import '@fontsource/roboto/500.css';
 import '@fontsource/roboto/700.css';
 import Pins from './pages/Pins/Pins'
+import Contact from './pages/Contact/Contact'
 
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -116,6 +117,10 @@ function App() {
           element = { 
             Pins({isLoggedIn, checkFavorites, addFavorite, deleteFavorite, favorites })
           }
+        />
+        <Route
+          path = '/contact'
+          element = { Contact() }
         />
       </Routes>
     </>
