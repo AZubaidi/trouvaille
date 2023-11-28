@@ -11,6 +11,18 @@ export default function Card({destinationId, pointId, name, country, photo, dest
 			addFavorite(pointId);
 		}
 	}
+	let nameStyle;
+	if (bigCard) {
+		nameStyle = {
+			fontSize: '1.3rem',
+			textShadow: "-1px -1px 0 #000, 0 -1px 0 #000, 1px -1px 0 #000, 1px  0   0 #000, 1px  1px 0 #000, 0    1px 0 #000,-1px  1px 0 #000, -1px  0   0 #000;",
+		}
+	} else {
+	nameStyle = {
+			textShadow: "-1px -1px 0 #000, 0 -1px 0 #000, 1px -1px 0 #000, 1px  0   0 #000, 1px  1px 0 #000, 0    1px 0 #000,-1px  1px 0 #000, -1px  0   0 #000;",
+			lineHeight: '8px;'
+		}
+	}
 	return (
 		<div className={`card ${destination? 'card--dstn' : '' } ${bigCard? 'card--special' : ''}`} style={{backgroundImage: `url(${photo})`}}>
 			{overlay &&
@@ -21,10 +33,10 @@ export default function Card({destinationId, pointId, name, country, photo, dest
 			}
 			{overlay &&
 				<>
-			<Typography className={'card__name'} sx={{fontWeight: 'bold', WebkitTextStroke: '0.5px black'}}>
+			<Typography className={'card__name'} sx={nameStyle}>
 				{name}
 			</Typography>
-			<Typography className='card__country'>
+			<Typography className='card__country' sx={{fontWeight: 'bold'}}>
 				{country}
 			</Typography>
 			</>
