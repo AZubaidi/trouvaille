@@ -7,10 +7,13 @@ The back-end for the server can be found here: https://github.com/AZubaidi/bstn-
 **Requirements:**
 - `node.js`, `postgreSQL`
 
+  *Note: to use MySQL instead, make the database using MySQL and change the `knexfile.js` to use MySQL.*
+
 **Installation steps:**
 
 - Clone this repo
 - Clone the back-end repo
+- Create a database using postgreSQL, `psql -U postgres`, `create database trouvaille;`
 - In the folder for this repo, run `npm i && npm run dev`
 - Create a `.env` file in the back-end folder and populate it, using `.env.template` as an example
 - In the folder for the back-end, run `npx knex migrate:latest` and `npx knex seed:run` to create and populate your database
